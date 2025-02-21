@@ -12,11 +12,13 @@ Code and resources from BRAIN-MAGNET. For more information check out our [paper]
 
 * [Citation](https://github.com/ruizhideng/BRAIN-MAGNET/tree/main?tab=readme-ov-file#3-citation)
 
+* How to prioritize the variants from your GS data?
+
 ## 1. Quick start
 
 ### (1) Querying specific variants
 
-BRAIN-MAGNET predictions for all possible SNPs from NSC NCREs (~1 billion), you can easily score your interested variants from our pre-scored data.
+BRAIN-MAGNET predictions for all possible SNPs from NSC NCREs (~100 million), you can easily score your interested variants from our pre-scored data.
 
 #### Install the latest tabix:
 
