@@ -82,15 +82,16 @@ The UCSC tracks of data are available [here](https://genome.ucsc.edu/s/BarakatLa
 
 ###  3. The code generates the figures of the paper
 
-Check the codes of figures: analysis/NSC_ChIP-STARR-seq.R
+Check the codes of figures: `analysis/NSC_ChIP-STARR-seq.R`
 
 ### 2. Application of this model
 
-Play with the model: examples/basic_example.ipynb
+Play with the model: `examples/training.ipynb`
 
-Variant effect prediction: examples/vep.ipynb
+Scan motifs: `examples/scan_motifs.ipynb`
 
-Training (human): examples/training.ipynb
+Generate cb scores for each nucleotide: `examples/cb_scores.ipynb`
+
 
 #### Train BRAIN-MAGNET on your own data
 ```
