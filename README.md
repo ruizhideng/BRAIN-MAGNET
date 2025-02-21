@@ -1,14 +1,24 @@
-## BRAIN-MAGNET: A novel functional genomics atlas coupled with convolutional neural networks facilitates clinical interpretation of disease relevant variants in non-coding regulatory elements.
+### BRAIN-MAGNET: A novel functional genomics atlas coupled with convolutional neural networks facilitates clinical interpretation of disease relevant variants in non-coding regulatory elements.
 
 <div align=center><img src="https://github.com/user-attachments/assets/0c847ee6-a48a-43a6-85d8-cec5ed7bf896" width="40%"></div>
 
-For more information check out our [paper](https://doi.org/10.1101/2024.04.13.24305761), and the UCSC tracks of data are available [here](https://genome.ucsc.edu/s/BarakatLab/BrainMagnet_NSC_ESC_cb_scoreshg38).
+Code and resources from BRAIN-MAGNET.
+
+For more information check out our [paper](https://doi.org/10.1101/2024.04.13.24305761).
+
+* [Quick start](https://github.com/ruizhideng/BRAIN-MAGNET/edit/main/README.md#1-querying-specific-variants)
+
+* [Application of this model](https://github.com/ruizhideng/BRAIN-MAGNET/edit/main/README.md#2-application-of-this-model)
+
+* [Citation](https://github.com/ruizhideng/BRAIN-MAGNET/edit/main/README.md#3-citation)
+
+## Quick start
 
 ### 1. Querying specific variants
 
-BRAIN-MAGNET predictions for all possible SNPs from NSC NCREs (~1 billion)
+BRAIN-MAGNET predictions for all possible SNPs from NSC NCREs (~1 billion), you can easily score your interested variants from our pre-scored data.
 
-Install the latest tabix:
+#### Install the latest tabix:
 
 ```
 conda install bioconda::htslib
@@ -67,7 +77,40 @@ Then use tabix to request the scores from the specific regions:
 ```
 tabix BRAIN_MAGNET_scores_hg38.txt.bgz -R regions.bed
 ```
-### 2. Train BRAIN-MAGNET on your data
+
+### 2. Visualize the dataset in UCSC
+
+The UCSC tracks of data are available [here](https://genome.ucsc.edu/s/BarakatLab/BrainMagnet_NSC_ESC_cb_scoreshg38).
+
+###  3. The code generates the figures of the paper
 
 
+### Application of this model
+
+
+Play with the model: examples/msa/basic_example.ipynb
+Variant effect prediction: examples/msa/vep.ipynb
+Training (human): examples/msa/training.ipynb
+
+```
+import magnet.model
+from transformers import AutoModelForMaskedLM
+
+model = AutoModelForMaskedLM.from_pretrained("RuizhiDeng/BRAIN-MAGNET-NSC")
+or
+model = AutoModelForMaskedLM.from_pretrained("RuizhiDeng/BRAIN-MAGNET-ESC")
+```
+
+### 3. Citation
+```
+@article{benegas2025dna,
+  title={BRAIN-MAGNET: A novel functional genomics atlas coupled with convolutional neural networks facilitates clinical interpretation of disease relevant variants in non-coding regulatory elements},
+  author={R. Deng, E. Perenthaler, A. Nikoncuk, S. Yousefi, K. Lanko, R. Schot, M. Maresca, E. Medico-Salsench, L. E. Sanderson, M. J. Parker, W. F.J. van Ijcken, J. Park, M. Sturm, T. B. Haack, Genomics England Research Consortium, G. V. 
+  Roshchupkin, E. Mulugeta, T. S. Barakat.},
+  journal={medRxiv},
+  pages={2024.04.13.24305761},
+  year={2024},
+  doi={10.1101/2024.04.13.24305761}
+}
+```
 rd_APP: please download data at https://figshare.com/s/c577b8b70d2c7c2e8faa
