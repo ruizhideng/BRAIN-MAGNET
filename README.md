@@ -1,8 +1,10 @@
-### BRAIN-MAGNET: A novel functional genomics atlas coupled with convolutional neural networks facilitates clinical interpretation of disease relevant variants in non-coding regulatory elements.
+### <p align="center">BRAIN-MAGNET: A novel functional genomics atlas coupled with convolutional neural networks facilitates clinical interpretation of disease relevant variants in non-coding regulatory elements</p>
 
 <div align=center><img src="https://github.com/user-attachments/assets/0c847ee6-a48a-43a6-85d8-cec5ed7bf896" width="40%"></div>
 
 Code and resources from BRAIN-MAGNET. For more information check out our [paper](https://doi.org/10.1101/2024.04.13.24305761).
+
+## Content
 
 * [Quick start](https://github.com/ruizhideng/BRAIN-MAGNET/tree/main?tab=readme-ov-file#1-querying-specific-variants)
 
@@ -10,9 +12,9 @@ Code and resources from BRAIN-MAGNET. For more information check out our [paper]
 
 * [Citation](https://github.com/ruizhideng/BRAIN-MAGNET/tree/main?tab=readme-ov-file#3-citation)
 
-## Quick start
+## 1. Quick start
 
-### 1. Querying specific variants
+### (1) Querying specific variants
 
 BRAIN-MAGNET predictions for all possible SNPs from NSC NCREs (~1 billion), you can easily score your interested variants from our pre-scored data.
 
@@ -76,11 +78,11 @@ Then use tabix to request the scores from the specific regions:
 tabix BRAIN_MAGNET_scores_hg38.txt.bgz -R regions.bed
 ```
 
-### 2. Visualize the dataset in UCSC
+#### (2) Visualize the dataset in UCSC
 
 The UCSC tracks of data are available [here](https://genome.ucsc.edu/s/BarakatLab/BrainMagnet_NSC_ESC_cb_scoreshg38).
 
-###  3. The code generates the figures of the paper
+#### (3) The code generates the figures of the paper
 
 Check the codes of figures: `analysis/NSC_ChIP-STARR-seq.R`
 
