@@ -2,15 +2,13 @@
 
 <div align=center><img src="https://github.com/user-attachments/assets/0c847ee6-a48a-43a6-85d8-cec5ed7bf896" width="40%"></div>
 
-Code and resources from BRAIN-MAGNET.
+Code and resources from BRAIN-MAGNET. For more information check out our [paper](https://doi.org/10.1101/2024.04.13.24305761).
 
-For more information check out our [paper](https://doi.org/10.1101/2024.04.13.24305761).
+* [Quick start](https://github.com/ruizhideng/BRAIN-MAGNET/tree/main?tab=readme-ov-file#1-querying-specific-variants)
 
-* [Quick start](https://github.com/ruizhideng/BRAIN-MAGNET/edit/main/README.md#1-querying-specific-variants)
+* [Application of this model](https://github.com/ruizhideng/BRAIN-MAGNET/tree/main?tab=readme-ov-file#2-visualize-the-dataset-in-ucsc)
 
-* [Application of this model](https://github.com/ruizhideng/BRAIN-MAGNET/edit/main/README.md#2-application-of-this-model)
-
-* [Citation](https://github.com/ruizhideng/BRAIN-MAGNET/edit/main/README.md#3-citation)
+* [Citation](https://github.com/ruizhideng/BRAIN-MAGNET/tree/main?tab=readme-ov-file#3-citation)
 
 ## Quick start
 
@@ -84,14 +82,17 @@ The UCSC tracks of data are available [here](https://genome.ucsc.edu/s/BarakatLa
 
 ###  3. The code generates the figures of the paper
 
+Check the codes of figures: analysis/NSC_ChIP-STARR-seq.R
 
-### Application of this model
+### 2. Application of this model
 
+Play with the model: examples/basic_example.ipynb
 
-Play with the model: examples/msa/basic_example.ipynb
-Variant effect prediction: examples/msa/vep.ipynb
-Training (human): examples/msa/training.ipynb
+Variant effect prediction: examples/vep.ipynb
 
+Training (human): examples/training.ipynb
+
+#### Train BRAIN-MAGNET on your own data
 ```
 import magnet.model
 from transformers import AutoModelForMaskedLM
@@ -103,10 +104,10 @@ model = AutoModelForMaskedLM.from_pretrained("RuizhiDeng/BRAIN-MAGNET-ESC")
 
 ### 3. Citation
 ```
-@article{benegas2025dna,
+@article{deng2024dna,
   title={BRAIN-MAGNET: A novel functional genomics atlas coupled with convolutional neural networks facilitates clinical interpretation of disease relevant variants in non-coding regulatory elements},
   author={R. Deng, E. Perenthaler, A. Nikoncuk, S. Yousefi, K. Lanko, R. Schot, M. Maresca, E. Medico-Salsench, L. E. Sanderson, M. J. Parker, W. F.J. van Ijcken, J. Park, M. Sturm, T. B. Haack, Genomics England Research Consortium, G. V. 
-  Roshchupkin, E. Mulugeta, T. S. Barakat.},
+  Roshchupkin, E. Mulugeta, T. S. Barakat},
   journal={medRxiv},
   pages={2024.04.13.24305761},
   year={2024},
