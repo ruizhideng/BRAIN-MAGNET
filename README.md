@@ -12,7 +12,6 @@ Code and resources from BRAIN-MAGNET. For more information check out our [paper]
 
 * [Citation](https://github.com/ruizhideng/BRAIN-MAGNET/tree/main?tab=readme-ov-file#3-citation)
 
-* How to prioritize the variants from your GS data?
 
 ## 1. Quick start
 
@@ -87,6 +86,8 @@ The UCSC tracks of data are available [here](https://genome.ucsc.edu/s/BarakatLa
 #### (3) The code generates the figures of the paper
 
 Check the codes of figures: `analysis/NSC_ChIP-STARR-seq.R`
+
+#### (4) T How to prioritize the variants from your GS data?
 
 ### 2. Application of this model
 
