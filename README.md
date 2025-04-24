@@ -87,7 +87,8 @@ The UCSC tracks of data are available [here](https://genome.ucsc.edu/s/BarakatLa
 
 Check the codes of figures: `analysis/NSC_ChIP-STARR-seq.R`
 
-#### (4) T How to prioritize the variants from your GS data?
+#### (4) How to prioritize the variants from your GS data?
+
 
 ### 2. Application of this model
 
