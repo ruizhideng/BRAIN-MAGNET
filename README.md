@@ -91,7 +91,7 @@ Check the codes of figures: `analysis/NSC_ChIP-STARR-seq.R`
 
 We provide some general recommendations:
 
-(1) Population allele frequency (AF): Verify that your variants are rare by checking their AF in population databases such as gnomAD or similar resources. Prioritize variants with low or absent frequency in the general population.
+(1) Population allele frequency (AF): Verify that your variants are rare by checking their AF in population databases such as gnomAD, GEL or similar resources. Prioritize variants with low (depending on disease frequency) or absent frequency in the general population.
 
 (2) Regulatory region annotation: Determine whether your variants are located within our NCREs atlas. Pay special attention to variants that fall within high category NCREs.
 
