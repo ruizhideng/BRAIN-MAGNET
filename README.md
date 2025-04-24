@@ -92,8 +92,11 @@ Check the codes of figures: `analysis/NSC_ChIP-STARR-seq.R`
 We provide some general recommendations:
 
 (1) Population allele frequency (AF): Verify that your variants are rare by checking their AF in population databases such as gnomAD or similar resources. Prioritize variants with low or absent frequency in the general population.
+
 (2) Regulatory region annotation: Determine whether your variants are located within our NCREs atlas. Pay special attention to variants that fall within high category NCREs.
+
 (3) Functional impact prediction: Assess the potential regulatory impact of the variants. Prioritize those with high cb scores or disruption of our predicted crucial motif sites.
+
 (4) Gene-Phenotype relevance: Evaluate whether the predicted target genes of the NCREs explain the patient's clinical phenotype.
 
 ### 2. Application of this model
