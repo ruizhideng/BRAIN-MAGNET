@@ -95,7 +95,7 @@ We provide some general recommendations:
 
 (2) Regulatory region annotation: Determine whether your variants are located within our NCREs atlas. Pay special attention to variants that fall within high category NCREs.
 
-(3) Functional impact prediction: Assess the potential regulatory impact of the variants. Prioritize those with high cb scores or disruption of our predicted crucial motif sites.
+(3) Functional impact prediction: Assess the potential regulatory impact of the variants. Prioritize those with high cb scores or disruption of our predicted crucial motif sites (you could trace the motif sites from our provided [UCSC tracks](https://genome.ucsc.edu/s/BarakatLab/BrainMagnet_NSC_ESC_cb_scoreshg38)).
 
 (4) Gene-Phenotype relevance: Evaluate whether the predicted target genes of the NCREs explain the patient's clinical phenotype.
 
