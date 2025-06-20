@@ -107,17 +107,6 @@ Scan motifs: `examples/scan_motifs.ipynb`
 
 Generate cb scores for each nucleotide: `examples/cb_scores.ipynb`
 
-
-#### Train BRAIN-MAGNET on your own data
-```
-import magnet.model
-from transformers import AutoModelForMaskedLM
-
-model = AutoModelForMaskedLM.from_pretrained("RuizhiDeng/BRAIN-MAGNET-NSC")
-or
-model = AutoModelForMaskedLM.from_pretrained("RuizhiDeng/BRAIN-MAGNET-ESC")
-```
-
 ### 3. Citation
 ```
 @article{deng2024dna,
