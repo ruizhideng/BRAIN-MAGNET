@@ -185,16 +185,9 @@ The notebook `examples/training.ipynb` is parameterized so other users can run i
 - `TARGET_COLUMN`: activity column to predict
 - `OUTPUT_DIR`: where checkpoints/plots/predictions are written
 
-## 5. BRAIN-MAGNET helper utilities
 
-For convenience, we include a minimal set of sequence I/O and encoding helpers under:
 
-- `src/brain_magnet/brain_magnet_helper/IOHelper.py`
-- `src/brain_magnet/brain_magnet_helper/SequenceHelper.py`
-
-These functions are adapted from [DeepSTARR](https://github.com/bernardo-de-almeida/DeepSTARR/tree/main/DeepSTARR/Neural_Network_DNA_Demo/helper).
-
-## 6. Training CLI (wraps the notebook)
+## 5. Training CLI (wraps the notebook)
 
 You can run the same training pipeline as `examples/training.ipynb` from the command line:
 
@@ -211,16 +204,15 @@ It will write:
 - `output_dir/metrics.json` and `output_dir/history.json`
 - `output_dir/preds_targets/<target-column>/{preds,targets}_<target-column>_{Train,Valid,Test}.npy`
 
-## 7. Citation
+## 6. Citation
 ```
 @article{deng2024dna,
-  title={BRAIN-MAGNET: A novel functional genomics atlas coupled with convolutional neural networks facilitates clinical interpretation of disease relevant variants in non-coding regulatory elements},
-  author={R. Deng, E. Perenthaler, A. Nikoncuk, S. Yousefi, K. Lanko, R. Schot, M. Maresca, E. Medico-Salsench, L. E. Sanderson, M. J. Parker, W. F.J. van Ijcken, J. Park, M. Sturm, T. B. Haack, Genomics England Research Consortium, G. V. 
-  Roshchupkin, E. Mulugeta, T. S. Barakat},
-  journal={medRxiv},
-  pages={2024.04.13.24305761},
-  year={2024},
-  doi={10.1101/2024.04.13.24305761}
+  title={BRAIN-MAGNET: A functional genomics atlas for interpretation of non-coding variants},
+  author={R. Deng, E. Perenthaler, A. Nikoncuk, S. Yousefi, K. Lanko, R. Schot, M. Maresca, E. Medico-Salsench, L. E. Sanderson, M. J. Parker, W. F.J. van Ijcken, J. Park, M. Sturm, T. B. Haack, G. V. Roshchupkin, E. Mulugeta, T. S. Barakat},
+  journal={Cell},
+  pages={Volume 189, Issue 2p676-695.e24January 22, 2026},
+  year={2026},
+  doi={10.1016/j.cell.2025.10.029}
 }
 ```
 rd_APP: please download data at https://figshare.com/s/c577b8b70d2c7c2e8faa
