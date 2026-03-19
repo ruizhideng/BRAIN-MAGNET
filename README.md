@@ -107,7 +107,111 @@ Scan motifs: `examples/scan_motifs.ipynb`
 
 Generate cb scores for each nucleotide: `examples/cb_scores.ipynb`
 
-### 3. Citation
+## 3. Prepare training data from an activity table (user-friendly)
+
+You can start from **your own** `Enhancer_activity.txt`-like file:
+
+- **Input format**: first 3 columns are BED (`chrom`, `start`, `end`), followed by **any number of activity columns** (one per cell/assay).
+- **Outputs**:
+  - `Enhancer.fa` (forward only)
+  - `train_set/Sequences_{Train,Valid,Test}.fa`
+  - `train_set/Sequences_activity_{Train,Valid,Test}.txt` (same activity columns as your input, or a subset)
+  - optional reverse-complement augmentation appended to each split (headers like `>START-END Reversed:`)
+
+### Install
+
+From the repo root:
+
+```bash
+python -m pip install .
+```
+
+To train the CNN model, install training extras:
+
+```bash
+python -m pip install .[train]
+```
+
+If you want `prepare_data` to fetch sequences from a genome FASTA (uses `pyfaidx`):
+
+```bash
+python -m pip install .[prepare-genome]
+```
+
+### Run
+
+```bash
+brain-magnet prepare_data \
+  --enhancer-activity /path/to/Enhancer_activity.txt \
+  --sequences-fasta /path/to/Enhancer.fa \
+  --out-dir /path/to/output_folder
+```
+
+If you cannot (or don’t want to) install the package, you can run it directly from the repo:
+
+```bash
+python3 scripts/prepare_enhancer_data.py \
+  --enhancer-activity /path/to/Enhancer_activity.txt \
+  --sequences-fasta /path/to/Enhancer.fa \
+  --out-dir /path/to/output_folder
+```
+
+If you prefer to fetch sequences from a genome FASTA directly, you can pass `--genome-fasta`,
+but that requires an extra Python dependency (`pyfaidx`) in your environment.
+
+Optional:
+
+- choose a subset of activity columns to write:
+
+```bash
+brain-magnet prepare_data \
+  --enhancer-activity /path/to/Enhancer_activity.txt \
+  --genome-fasta /path/to/hg38.fa \
+  --out-dir /path/to/output_folder \
+  --target-cols "NSC_log2_enrichment,ESC_log2_enrichment"
+```
+
+The outputs will be written to:
+
+- `output_folder/Enhancer.fa`
+- `output_folder/train_set/Sequences_{Train,Valid,Test}.fa`
+- `output_folder/train_set/Sequences_activity_{Train,Valid,Test}.txt`
+
+## 4. Training notebook
+
+The notebook `examples/training.ipynb` is parameterized so other users can run it by editing one config cell:
+
+- `TRAIN_SET_DIR`: path to your prepared `train_set/`
+- `TARGET_COLUMN`: activity column to predict
+- `OUTPUT_DIR`: where checkpoints/plots/predictions are written
+
+## 5. BRAIN-MAGNET helper utilities
+
+For convenience, we include a minimal set of sequence I/O and encoding helpers under:
+
+- `src/brain_magnet/brain_magnet_helper/IOHelper.py`
+- `src/brain_magnet/brain_magnet_helper/SequenceHelper.py`
+
+These functions are adapted from [DeepSTARR](https://github.com/bernardo-de-almeida/DeepSTARR/tree/main/DeepSTARR/Neural_Network_DNA_Demo/helper).
+
+## 6. Training CLI (wraps the notebook)
+
+You can run the same training pipeline as `examples/training.ipynb` from the command line:
+
+```bash
+brain-magnet train \
+  --train-set-dir /path/to/train_set \
+  --target-column NSC_log2_enrichment \
+  --output-dir /path/to/output_training/NSC_log2_enrichment
+```
+
+It will write:
+
+- `output_dir/models/checkpoint_<target-column>.pth`
+- `output_dir/metrics.json` and `output_dir/history.json`
+- `output_dir/preds_targets/<target-column>/{preds,targets}_<target-column>_{Train,Valid,Test}.npy`
+
+## 7. Citation
 ```
 @article{deng2024dna,
   title={BRAIN-MAGNET: A novel functional genomics atlas coupled with convolutional neural networks facilitates clinical interpretation of disease relevant variants in non-coding regulatory elements},
