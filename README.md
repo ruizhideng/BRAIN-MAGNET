@@ -2,7 +2,7 @@
 
 <div align=center><img src="https://github.com/user-attachments/assets/0c847ee6-a48a-43a6-85d8-cec5ed7bf896" width="40%"></div>
 
-Code and resources from BRAIN-MAGNET. For more information check out our [paper](https://doi.org/10.1101/2024.04.13.24305761).
+Code and resources from BRAIN-MAGNET. For more information check out our [paper](https://www.cell.com/cell/fulltext/S0092-8674(25)01234-6).
 
 ## Content
 
@@ -206,7 +206,7 @@ It will write:
 
 ## 6. Citation
 ```
-@article{deng2024dna,
+@article{deng2026dna,
   title={BRAIN-MAGNET: A functional genomics atlas for interpretation of non-coding variants},
   author={R. Deng, E. Perenthaler, A. Nikoncuk, S. Yousefi, K. Lanko, R. Schot, M. Maresca, E. Medico-Salsench, L. E. Sanderson, M. J. Parker, W. F.J. van Ijcken, J. Park, M. Sturm, T. B. Haack, G. V. Roshchupkin, E. Mulugeta, T. S. Barakat},
   journal={Cell},
