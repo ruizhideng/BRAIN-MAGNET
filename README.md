@@ -99,18 +99,36 @@ We provide some general recommendations:
 
 (d) Gene-Phenotype relevance: Evaluate whether the predicted target genes of the NCREs explain the patient's clinical phenotype.
 
-### 2. Application of this model
+## 2. BRAIN-MAGNET to train your own data
+### (1) Installation
+#### Recommend users to use pixi or conda to create a clean environment
+```bash
+pixi init brain-magnet --channel conda-forge --channel bioconda --channel pytorch 
+pixi shell --manifest-path brain-magnet
+pixi add python=3.11
+pixi add pip
 
-Play with the model: `examples/training.ipynb`
+export PIP_CACHE_DIR=/large_space/.pip_cache
+export TMPDIR=/large_space/
+```
+#### Install BRAIN-MAGNET in specific location
+```bash
+git clone https://github.com/ruizhideng/BRAIN-MAGNET.git
+cd BRAIN-MAGNET
+pixi run python -m pip install .
+```
+#### Check the installation is successful
 
-Scan motifs: `examples/scan_motifs.ipynb`
+```bash
+brain-magnet -h
+brain-magnet prepare_data -h
+brain-magnet train -h
+```
 
-Generate cb scores for each nucleotide: `examples/cb_scores.ipynb`
-
-## 3. Prepare training data from an activity table
+### (2) Prepare training data from an activity table
 
 You can start from **your own** `Enhancer_activity.txt`-like file:
-
+You can see an example from test/Enhancer_activity.txt
 - **Input format**: first 3 columns are BED (`chrom`, `start`, `end`), followed by **any number of activity columns** (one per cell/assay).
 - **Outputs**:
   - `Enhancer.fa` (forward only)
@@ -118,15 +136,6 @@ You can start from **your own** `Enhancer_activity.txt`-like file:
   - `train_set/Sequences_activity_{Train,Valid,Test}.txt` (same activity columns as your input, or a subset)
   - optional reverse-complement augmentation appended to each split (headers like `>START-END Reversed:`)
 
-### Install
-
-From the repo root:
-
-```bash
-python -m pip install .
-```
-
-### Run
 
 ```bash
 brain-magnet prepare_data \
@@ -142,17 +151,7 @@ The outputs will be written to:
 - `output_folder/train_set/Sequences_{Train,Valid,Test}.fa`
 - `output_folder/train_set/Sequences_activity_{Train,Valid,Test}.txt`
 
-## 4. Training notebook
-
-The notebook `examples/training.ipynb` is parameterized so other users can run it by editing one config cell:
-
-- `TRAIN_SET_DIR`: path to your prepared `train_set/`
-- `TARGET_COLUMN`: activity column to predict
-- `OUTPUT_DIR`: where checkpoints/plots/predictions are written
-
-## 5. Training CLI (wraps the notebook)
-
-You can run the same training pipeline as `examples/training.ipynb` from the command line:
+### (3)  training
 
 ```bash
 brain-magnet train \

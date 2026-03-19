@@ -14,15 +14,13 @@ def main(argv=None):
     )
     p_prep.add_argument("--enhancer-activity", required=True, help="Path to activity TSV (BED + activity columns).")
     p_prep.add_argument(
+        "--genome-fasta", 
+        default=None, 
+        help="Reference genome FASTA (required unless --sequences-fasta is provided). BED file will extract the sequences from the genome FASTA file.")
+    p_prep.add_argument(
         "--sequences-fasta",
         default=None,
-        help="FASTA with headers `chrom:start-end` matching the activity table rows (recommended).",
-    )
-    p_prep.add_argument(
-        "--genome-fasta",
-        default=None,
-        help="Reference genome FASTA (optional; requires pyfaidx in your env).",
-    )
+        help="FASTA with headers `chrom:start-end` matching the activity table rows. If you have your own sequences, you can use this option to provide the sequences.")
     p_prep.add_argument("--out-dir", required=True, help="Output directory.")
     p_prep.add_argument("--seed", type=int, default=13)
     p_prep.add_argument("--train-frac", type=float, default=0.8)
