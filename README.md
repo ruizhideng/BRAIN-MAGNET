@@ -2,7 +2,7 @@
 
 <div align=center><img src="https://github.com/user-attachments/assets/0c847ee6-a48a-43a6-85d8-cec5ed7bf896" width="40%"></div>
 
-Code and resources from BRAIN-MAGNET. For more information check out our [paper](https://doi.org/10.1101/2024.04.13.24305761).
+Code and resources from BRAIN-MAGNET. For more information check out our [paper](https://www.cell.com/cell/fulltext/S0092-8674(25)01234-6).
 
 ## Content
 
@@ -107,7 +107,7 @@ Scan motifs: `examples/scan_motifs.ipynb`
 
 Generate cb scores for each nucleotide: `examples/cb_scores.ipynb`
 
-## 3. Prepare training data from an activity table (user-friendly)
+## 3. Prepare training data from an activity table
 
 You can start from **your own** `Enhancer_activity.txt`-like file:
 
@@ -126,42 +126,7 @@ From the repo root:
 python -m pip install .
 ```
 
-To train the CNN model, install training extras:
-
-```bash
-python -m pip install .[train]
-```
-
-If you want `prepare_data` to fetch sequences from a genome FASTA (uses `pyfaidx`):
-
-```bash
-python -m pip install .[prepare-genome]
-```
-
 ### Run
-
-```bash
-brain-magnet prepare_data \
-  --enhancer-activity /path/to/Enhancer_activity.txt \
-  --sequences-fasta /path/to/Enhancer.fa \
-  --out-dir /path/to/output_folder
-```
-
-If you cannot (or don’t want to) install the package, you can run it directly from the repo:
-
-```bash
-python3 scripts/prepare_enhancer_data.py \
-  --enhancer-activity /path/to/Enhancer_activity.txt \
-  --sequences-fasta /path/to/Enhancer.fa \
-  --out-dir /path/to/output_folder
-```
-
-If you prefer to fetch sequences from a genome FASTA directly, you can pass `--genome-fasta`,
-but that requires an extra Python dependency (`pyfaidx`) in your environment.
-
-Optional:
-
-- choose a subset of activity columns to write:
 
 ```bash
 brain-magnet prepare_data \
@@ -185,8 +150,6 @@ The notebook `examples/training.ipynb` is parameterized so other users can run i
 - `TARGET_COLUMN`: activity column to predict
 - `OUTPUT_DIR`: where checkpoints/plots/predictions are written
 
-
-
 ## 5. Training CLI (wraps the notebook)
 
 You can run the same training pipeline as `examples/training.ipynb` from the command line:
@@ -206,7 +169,7 @@ It will write:
 
 ## 6. Citation
 ```
-@article{deng2024dna,
+@article{deng2026dna,
   title={BRAIN-MAGNET: A functional genomics atlas for interpretation of non-coding variants},
   author={R. Deng, E. Perenthaler, A. Nikoncuk, S. Yousefi, K. Lanko, R. Schot, M. Maresca, E. Medico-Salsench, L. E. Sanderson, M. J. Parker, W. F.J. van Ijcken, J. Park, M. Sturm, T. B. Haack, G. V. Roshchupkin, E. Mulugeta, T. S. Barakat},
   journal={Cell},

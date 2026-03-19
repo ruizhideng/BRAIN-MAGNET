@@ -1,0 +1,3 @@
+# No required Python dependencies for data preparation.
+# If you want genome-based sequence fetching, install a FASTA indexer
+# (e.g. pyfaidx) or provide `--sequences-fasta` directly.
