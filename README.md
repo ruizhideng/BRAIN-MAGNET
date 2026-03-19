@@ -166,7 +166,7 @@ It will write:
 - `output_dir/metrics.json` and `output_dir/history.json`
 - `output_dir/preds_targets/<target-column>/{preds,targets}_<target-column>_{Train,Valid,Test}.npy`
 
-## 6. Citation
+## 3. Citation
 ```
 @article{deng2026dna,
   title={BRAIN-MAGNET: A functional genomics atlas for interpretation of non-coding variants},
